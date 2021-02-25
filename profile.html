@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>MIM Dashboard</title>
+
+        <!-- Favicon-->
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="img/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#29648a">
+
+        <!-- External Library -->
+         <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
+         
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap">
+
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
+
+        <!--  Date Range-->
+         <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" crossorigin="anonymous" />
+
+        <!--  Select-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+        <!-- Stylesheet -->
+        <link href="css/neumorphism.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/sidebar-new.css">
+
+    </head>
+    <body class="sb-nav-fixed" id="page-top">
+        <nav class="sb-topnav navbar navbar-expand bg-primary mb-4 mt-4 pl-3 pl-lg-0">
+            <a class="navbar-brand shadow-inset py-2 rounded border border-light mr-lg-3 text-center" href="index.html"><img src="img/mim-logo.svg" alt="MIM Logo"></a>
+            <button class="btn btn-primary order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+              <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0 top-info">
+                
+                <a href="#" class="btn text-success btn-icon-split mr-3">
+                      <span class="text-success">
+                        <i class="fas fa-wallet"></i>
+                      </span>
+                      <span class="text font-weight-bold">Balance : 13564.650</span>
+                  </a>
+                  <a href="#" class="btn text-dark btn-icon-split">
+                      <span class="text-gray">
+                        <i class="fas fa-calendar-alt"></i>
+                      </span>
+                      <span class="text font-weight-bold">Date : <span class="user"></span></span>
+                  </a>
+              </div>
+            
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="profile.html"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray"></i> Profile </a> 
+                        <a class="dropdown-item" href="setting.html"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray"></i> Settings </a> 
+                        <a class="dropdown-item" href="credit.html"> <i class="far fa-credit-card fa-sm fa-fw mr-2 text-gray"></i> Credit / Debit </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray"></i> Logout </a> 
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion bg-primary shadow-inset border-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu mt-4">
+                        <div class="nav">
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-tachometer-alt text-secondary"></i></div>
+                                Dashboard
+                            </a>
+                            <a class="nav-link" href="account-list.html">
+                               <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-list-alt text-secondary"></i></div>
+                                Account List
+                            </a>
+                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLinkext" aria-expanded="false" aria-controls="collapseLinkext">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-fw fa-link text-secondary"></i></div>
+                                 LINKEXT
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLinkext" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="analytics.html">Analytics / Reports</a>
+                                </nav>
+                            </div>
+                             <a class="nav-link" href="balance-management.html">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-wallet text-secondary"></i></div>
+                                Balance Management
+                            </a>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-chart-area text-secondary"></i></div>
+                                Reports
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseReports" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="sms-reports.html">SMS Reports</a>
+                                    <a class="nav-link" href="click-reports.html">Click Reports</a>
+                                    <a class="nav-link" href="credit-debit-logs.html">Credit & Debit</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="create-account.html">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-user-plus text-secondary"></i></div>
+                                Create account
+                            </a>
+                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-id-card-alt text-secondary"></i></div>
+                                Sender ID
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                   <a class="nav-link" href="allot-sender-id.html">Allot Sender Id</a>
+                                    <a class="nav-link" href="approve-sender-id.html">Approve Sender Id</a>
+                                </nav>
+                            </div>
+                             <a class="nav-link" href="approve-template.html">
+                               <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-thumbs-up text-secondary"></i></div>
+                                Approve Template
+                            </a>
+                            <a class="nav-link" href="block-unblock-account.html">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-user-lock text-secondary"></i></div>
+                                Block & Unblock A/C
+                            </a>
+                             <a class="nav-link" href="announcement.html">
+                                <div class="sb-nav-link-icon btn btn-icon-only btn-pill btn-primary"><i class="fas fa-bullhorn text-secondary"></i></div>
+                                Announcement
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer text-center">
+                        <div class="small">Logged in as:</div>
+                         Yusuf Admin
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                       <nav aria-label="breadcrumb" class="my-3">
+                          <ol class="breadcrumb breadcrumb-info">
+                              <li class="breadcrumb-item"><a href="#">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Profile Details</li>
+                          </ol>
+                      </nav>
+                        <div class="row"> 
+                        
+                        <!-- Area Chart -->
+                        <div class="col-xl-12 col-lg-12"> 
+                          <!-- Basic Card Example -->
+                          <div class="card bg-primary border-light shadow-soft mb-4">
+                            <div class="card-header py-3 bg-primary">
+                              <h6 class="m-0 font-weight-bold"><i class="far fa-user-circle"></i> Profile</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="needs-validation" novalidate>
+                                        <div class="form-row">
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Profile Id :</label>
+                                            <input type="text" class="form-control" value="20095357" id="validationCustom05" disabled>
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                            <div class="col-md-4 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Alpha Sender Id * :</label>
+                                            <select class="custom-select">
+                                                  <option>--Select--</option>
+                                                  <option value="1" selected>MIMTXT</option>
+                                                  <option value="2">Two</option>
+                                                  <option value="3">Three</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Default SMS Type :</label>
+                                            <select class="custom-select">
+                                                  <option value="4">Promotional</option>
+                                                  <option value="0">Transactional-1</option>
+                                                  <option value="3">Transactional-OptIn</option>
+                                                  <option selected="selected" value="6">Transactional-3</option>
+                                                  <option value="13">Transactional-OTP</option>
+                                                  <option value="9">Transactional-2</option>  
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom01" class="font-weight-bold">Full Name</label>
+                                            <input type="text" class="form-control" id="validationCustom01" value="Vipin" disabled>
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                            <div class="col-md-6 mb-3">
+                                              <label for="validationCustom05" class="font-weight-bold">DND :</label>
+                                              <div class="">
+                                              <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline01" name="customRadioInline2" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadioInline01">DND Allow </label>
+                                              </div>
+                                              <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline02" name="customRadioInline2" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadioInline02">DND Block </label>
+                                              </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom03" class="font-weight-bold">Company Name</label>
+                                            <input type="text" class="form-control" id="validationCustom03" value="MiM" disabled >
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom03" class="font-weight-bold">Website : www.</label>
+                                            <input type="text" class="form-control" id="validationCustom03" >
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                        </div>
+                                      
+                                        <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Mobile No. 01</label>
+                                            <input type="text" class="form-control" id="validationCustom05" value="9560396390" disabled >
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                            <div class="col-md-6 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Mobile No. 02</label>
+                                            <input type="text" class="form-control" id="validationCustom05" >
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom06" class="font-weight-bold">Email Id</label>
+                                            <input type="email" class="form-control" id="validationCustom06" value="vipin@myinboxmedia.com" disabled>
+                                            <div class="invalid-feedback">
+                                              Please provide a valid zip.
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Country Code </label>
+                                                  <select class="drop-select form-control" data-live-search="true">
+                                      <option value="+93" data-select2-id="9">Afghanistan (+93)</option>
+                                      <option value="+355" data-select2-id="10">Albania (+355)</option>
+                                      <option value="+213" data-select2-id="11">Algeria (+213)</option>
+                                      <option value="+376" data-select2-id="12">Andorra (+376)</option>
+                                      <option value="+244" data-select2-id="13">Angola (+244)</option>
+                                      <option value="+54" data-select2-id="14">Argentina (+54)</option>
+                                      <option value="+374" data-select2-id="15">Armenia (+374)</option>
+                                      <option value="+297" data-select2-id="16">Aruba (+297)</option>
+                                      <option value="+61" data-select2-id="17">Australia (+61)</option>
+                                      <option value="+43" data-select2-id="18">Austria (+43)</option>
+                                      <option value="+994" data-select2-id="19">Azerbaijan (+994)</option>
+                                      <option value="+973" data-select2-id="20">Bahrain (+973)</option>
+                                      <option value="+880" data-select2-id="21">Bangladesh (+880)</option>
+                                      <option value="+375" data-select2-id="22">Belarus (+375)</option>
+                                      <option value="+32" data-select2-id="23">Belgium (+32)</option>
+                                      <option value="+501" data-select2-id="24">Belize (+501)</option>
+                                      <option value="+229" data-select2-id="25">Benin (+229)</option>
+                                      <option value="+975" data-select2-id="26">Bhutan (+975)</option>
+                                      <option value="+591" data-select2-id="27">Bolivia (+591)</option>
+                                      <option value="+387" data-select2-id="28">Bosnia and Herzegovina (+387)</option>
+                                      <option value="+267" data-select2-id="29">Botswana (+267)</option>
+                                      <option value="+55" data-select2-id="30">Brazil (+55)</option>
+                                      <option value="+673" data-select2-id="31">Brunei (+673)</option>
+                                      <option value="+359" data-select2-id="32">Bulgaria (+359)</option>
+                                      <option value="+226" data-select2-id="33">Burkina Faso (+226)</option>
+                                      <option value="+257" data-select2-id="34">Burundi (+257)</option>
+                                      <option value="+855" data-select2-id="35">Cambodia (+855)</option>
+                                      <option value="+237" data-select2-id="36">Cameroon (+237)</option>
+                                      <option value="+238" data-select2-id="37">Cape Verde (+238)</option>
+                                      <option value="+236" data-select2-id="38">Central African Republic (+236)</option>
+                                      <option value="+235" data-select2-id="39">Chad (+235)</option>
+                                      <option value="+56" data-select2-id="40">Chile (+56)</option>
+                                      <option value="+86" data-select2-id="41">China (+86)</option>
+                                      <option value="+57" data-select2-id="42">Colombia (+57)</option>
+                                      <option value="+269" data-select2-id="43">Comoros (+269)</option>
+                                      <option value="+242" data-select2-id="44">Congo (+242)</option>
+                                      <option value="+682" data-select2-id="45">Cook Islands (+682)</option>
+                                      <option value="+506" data-select2-id="46">Costa Rica (+506)</option>
+                                      <option value="+385" data-select2-id="47">Croatia (+385)</option>
+                                      <option value="+53" data-select2-id="48">Cuba (+53)</option>
+                                      <option value="+357" data-select2-id="49">Cyprus (+357)</option>
+                                      <option value="+420" data-select2-id="50">Czech Republic (+420)</option>
+                                      <option value="+243" data-select2-id="51">Democratic Republic of Congo (+243)</option>
+                                      <option value="+45" data-select2-id="52">Denmark (+45)</option>
+                                      <option value="+253" data-select2-id="53">Djibouti (+253)</option>
+                                      <option value="+593" data-select2-id="54">Ecuador (+593)</option>
+                                      <option value="+20" data-select2-id="55">Egypt (+20)</option>
+                                      <option value="+503" data-select2-id="56">El Salvador (+503)</option>
+                                      <option value="+240" data-select2-id="57">Equatorial Guinea (+240)</option>
+                                      <option value="+372" data-select2-id="58">Estonia (+372)</option>
+                                      <option value="+251" data-select2-id="59">Ethiopia (+251)</option>
+                                      <option value="+500" data-select2-id="60">Falkland (Malvinas) Islands (+500)</option>
+                                      <option value="+298" data-select2-id="61">Faroe Islands (+298)</option>
+                                      <option value="+679" data-select2-id="62">Fiji (+679)</option>
+                                      <option value="+358" data-select2-id="63">Finland (+358)</option>
+                                      <option value="+33" data-select2-id="64">France (+33)</option>
+                                      <option value="+594" data-select2-id="65">French Guiana (+594)</option>
+                                      <option value="+241" data-select2-id="66">Gabon (+241)</option>
+                                      <option value="+220" data-select2-id="67">Gambia (+220)</option>
+                                      <option value="+995" data-select2-id="68">Georgia (+995)</option>
+                                      <option value="+49" data-select2-id="69">Germany (+49)</option>
+                                      <option value="+233" data-select2-id="70">Ghana (+233)</option>
+                                      <option value="+350" data-select2-id="71">Gibraltar (+350)</option>
+                                      <option value="+30" data-select2-id="72">Greece (+30)</option>
+                                      <option value="+299" data-select2-id="73">Greenland (+299)</option>
+                                      <option value="+590" data-select2-id="74">Guadeloupe (+590)</option>
+                                      <option value="+502" data-select2-id="75">Guatemala (+502)</option>
+                                      <option value="+224" data-select2-id="76">Guinea (+224)</option>
+                                      <option value="+245" data-select2-id="77">Guinea-Bissau (+245)</option>
+                                      <option value="+592" data-select2-id="78">Guyana (+592)</option>
+                                      <option value="+509" data-select2-id="79">Haiti (+509)</option>
+                                      <option value="+504" data-select2-id="80">Honduras (+504)</option>
+                                      <option value="+852" data-select2-id="81">Hong Kong (+852)</option>
+                                      <option value="+36" data-select2-id="82">Hungary (+36)</option>
+                                      <option value="+354" data-select2-id="83">Iceland (+354)</option>
+                                      <option selected="selected" value="+91" data-select2-id="2">India (+91)</option>
+                                      <option value="+62" data-select2-id="84">Indonesia (+62)</option>
+                                      <option value="+98" data-select2-id="85">Iran (+98)</option>
+                                      <option value="+964" data-select2-id="86">Iraq (+964)</option>
+                                      <option value="+353" data-select2-id="87">Ireland (+353)</option>
+                                      <option value="+972" data-select2-id="88">Israel (+972)</option>
+                                      <option value="+39" data-select2-id="89">Italy (+39)</option>
+                                      <option value="+225" data-select2-id="90">Ivory Coast (+225)</option>
+                                      <option value="+81" data-select2-id="91">Japan (+81)</option>
+                                      <option value="+962" data-select2-id="92">Jordan (+962)</option>
+                                      <option value="+254" data-select2-id="93">Kenya (+254)</option>
+                                      <option value="+686" data-select2-id="94">Kiribati (+686)</option>
+                                      <option value="+965" data-select2-id="95">Kuwait (+965)</option>
+                                      <option value="+996" data-select2-id="96">Kyrgyzstan (+996)</option>
+                                      <option value="+856" data-select2-id="97">Laos (+856)</option>
+                                      <option value="+371" data-select2-id="98">Latvia (+371)</option>
+                                      <option value="+961" data-select2-id="99">Lebanon (+961)</option>
+                                      <option value="+266" data-select2-id="100">Lesotho (+266)</option>
+                                      <option value="+231" data-select2-id="101">Liberia (+231)</option>
+                                      <option value="+218" data-select2-id="102">Libya (+218)</option>
+                                      <option value="+423" data-select2-id="103">Liechtenstein (+423)</option>
+                                      <option value="+370" data-select2-id="104">Lithuania (+370)</option>
+                                      <option value="+352" data-select2-id="105">Luxembourg (+352)</option>
+                                      <option value="+853" data-select2-id="106">Macau (+853)</option>
+                                      <option value="+389" data-select2-id="107">Macedonia (+389)</option>
+                                      <option value="+261" data-select2-id="108">Madagascar (+261)</option>
+                                      <option value="+265" data-select2-id="109">Malawi (+265)</option>
+                                      <option value="+60" data-select2-id="110">Malaysia (+60)</option>
+                                      <option value="+960" data-select2-id="111">Maldives (+960)</option>
+                                      <option value="+223" data-select2-id="112">Mali (+223)</option>
+                                      <option value="+356" data-select2-id="113">Malta (+356)</option>
+                                      <option value="+596" data-select2-id="114">Martinique (+596)</option>
+                                      <option value="+222" data-select2-id="115">Mauritania (+222)</option>
+                                      <option value="+230" data-select2-id="116">Mauritius (+230)</option>
+                                      <option value="+52" data-select2-id="117">Mexico (+52)</option>
+                                      <option value="+373" data-select2-id="118">Moldova (+373)</option>
+                                      <option value="+377" data-select2-id="119">Monaco (+377)</option>
+                                      <option value="+976" data-select2-id="120">Mongolia (+976)</option>
+                                      <option value="+382" data-select2-id="121">Montenegro (+382)</option>
+                                      <option value="+212" data-select2-id="122">Morocco (+212)</option>
+                                      <option value="+258" data-select2-id="123">Mozambique (+258)</option>
+                                      <option value="+95" data-select2-id="124">Myanmar (+95)</option>
+                                      <option value="+264" data-select2-id="125">Namibia (+264)</option>
+                                      <option value="+977" data-select2-id="126">Nepal (+977)</option>
+                                      <option value="+31" data-select2-id="127">Netherlands (+31)</option>
+                                      <option value="+599" data-select2-id="128">Netherlands Antilles (+599)</option>
+                                      <option value="+64" data-select2-id="129">New Zealand (+64)</option>
+                                      <option value="+505" data-select2-id="130">Nicaragua (+505)</option>
+                                      <option value="+227" data-select2-id="131">Niger (+227)</option>
+                                      <option value="+234" data-select2-id="132">Nigeria (+234)</option>
+                                      <option value="+47" data-select2-id="133">Norway (+47)</option>
+                                      <option value="+968" data-select2-id="134">Oman (+968)</option>
+                                      <option value="+92" data-select2-id="135">Pakistan (+92)</option>
+                                      <option value="+680" data-select2-id="136">Palau (+680)</option>
+                                      <option value="+507" data-select2-id="137">Panama (+507)</option>
+                                      <option value="+675" data-select2-id="138">Papua New Guinea (+675)</option>
+                                      <option value="+595" data-select2-id="139">Paraguay (+595)</option>
+                                      <option value="+51" data-select2-id="140">Peru (+51)</option>
+                                      <option value="+63" data-select2-id="141">Philippines (+63)</option>
+                                      <option value="+48" data-select2-id="142">Poland (+48)</option>
+                                      <option value="+351" data-select2-id="143">Portugal (+351)</option>
+                                      <option value="+974" data-select2-id="144">Qatar (+974)</option>
+                                      <option value="+262" data-select2-id="145">Reunion (+262)</option>
+                                      <option value="+40" data-select2-id="146">Romania (+40)</option>
+                                      <option value="+7" data-select2-id="147">Russian Federation (+7)</option>
+                                      <option value="+250" data-select2-id="148">Rwanda (+250)</option>
+                                      <option value="+685" data-select2-id="149">Samoa (+685)</option>
+                                      <option value="+378" data-select2-id="150">San Marino (+378)</option>
+                                      <option value="+239" data-select2-id="151">Sao Tome and Principe (+239)</option>
+                                      <option value="+966" data-select2-id="152">Saudi Arabia (+966)</option>
+                                      <option value="+221" data-select2-id="153">Senegal (+221)</option>
+                                      <option value="+381" data-select2-id="154">Serbia (+381)</option>
+                                      <option value="+248" data-select2-id="155">Seychelles (+248)</option>
+                                      <option value="+232" data-select2-id="156">Sierra Leone (+232)</option>
+                                      <option value="+65" data-select2-id="157">Singapore (+65)</option>
+                                      <option value="+421" data-select2-id="158">Slovakia (+421)</option>
+                                      <option value="+386" data-select2-id="159">Slovenia (+386)</option>
+                                      <option value="+677" data-select2-id="160">Solomon Islands (+677)</option>
+                                      <option value="+252" data-select2-id="161">Somalia (+252)</option>
+                                      <option value="+27" data-select2-id="162">South Africa (+27)</option>
+                                      <option value="+82" data-select2-id="163">South Korea (+82)</option>
+                                      <option value="+211" data-select2-id="164">South Sudan (+211)</option>
+                                      <option value="+34" data-select2-id="165">Spain (+34)</option>
+                                      <option value="+94" data-select2-id="166">Sri Lanka (+94)</option>
+                                      <option value="+249" data-select2-id="167">Sudan (+249)</option>
+                                      <option value="+597" data-select2-id="168">Suriname (+597)</option>
+                                      <option value="+268" data-select2-id="169">Swaziland (+268)</option>
+                                      <option value="+46" data-select2-id="170">Sweden (+46)</option>
+                                      <option value="+41" data-select2-id="171">Switzerland (+41)</option>
+                                      <option value="+963" data-select2-id="172">Syria (+963)</option>
+                                      <option value="+886" data-select2-id="173">Taiwan (+886)</option>
+                                      <option value="+992" data-select2-id="174">Tajikistan (+992)</option>
+                                      <option value="+255" data-select2-id="175">Tanzania (+255)</option>
+                                      <option value="+66" data-select2-id="176">Thailand (+66)</option>
+                                      <option value="+228" data-select2-id="177">Togo (+228)</option>
+                                      <option value="+676" data-select2-id="178">Tonga (+676)</option>
+                                      <option value="+216" data-select2-id="179">Tunisia (+216)</option>
+                                      <option value="+90" data-select2-id="180">Turkey (+90)</option>
+                                      <option value="+256" data-select2-id="181">Uganda (+256)</option>
+                                      <option value="+380" data-select2-id="182">Ukraine (+380)</option>
+                                      <option value="+971" data-select2-id="183">United Arab Emirates (+971)</option>
+                                      <option value="+44" data-select2-id="184">United Kingdom (+44)</option>
+                                      <option value="+1" data-select2-id="185">United States of America (+1)</option>
+                                      <option value="+598" data-select2-id="186">Uruguay (+598)</option>
+                                      <option value="+998" data-select2-id="187">Uzbekistan (+998)</option>
+                                      <option value="+678" data-select2-id="188">Vanuatu (+678)</option>
+                                      <option value="+58" data-select2-id="189">Venezuela (+58)</option>
+                                      <option value="+84" data-select2-id="190">Vietnam (+84)</option>
+                                      <option value="+967" data-select2-id="191">Yemen (+967)</option>
+                                      <option value="+260" data-select2-id="192">Zambia (+260)</option>
+                                      <option value="+263" data-select2-id="193">Zimbabwe (+263)</option>
+                                    </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom06" class="font-weight-bold">Account Creation Date :</label>
+                                            <input type="email" class="form-control" id="validationCustom06" value="6/8/2020 12:49:14 AM" disabled >
+                                            <div class="invalid-feedback">
+                                              Please provide a valid zip.
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6 mb-3">
+                                            <label for="validationCustom05" class="font-weight-bold">Expiry : </label>
+                                            <input type="text" class="form-control" id="validationCustom05" value="36500" disabled>
+                                            <div class="invalid-feedback">
+                                              Please select a valid state.
+                                            </div>
+                                          </div>
+                                        </div>  
+                                        <button class="btn btn-primary text-success btn-icon-split" type="submit">
+                                              <span class="text-success">
+                                                  <i class="fas fa-user-edit"></i>
+                                              </span>
+                                              <span class="text-success font-weight-bold">Update</span>
+                                        </button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-primary mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; My Inbox Media 2020</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+<!-- Scroll to Top Button--> 
+<a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i> </a>
+        <!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-primary text-facebook" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary text-danger" href="sign-in.html">Logout</a> </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript--> 
+<script src="vendor/jquery/jquery-3.5.1.min.js"></script> 
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+
+<!-- Core plugin JavaScript--> 
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
+
+<!--  Date--> 
+<script src="vendor/datepicker/moment.min.js"></script> 
+<script src="vendor/datepicker/daterangepicker.min.js"></script> 
+
+
+    
+<!-- Page level plugins --> 
+<!-- <script src="vendor/chart.js/Chart.min.js"></script>  -->
+
+<!-- Page level custom scripts --> 
+<!-- <script src="js/demo/chart-pie-demo.js"></script> 
+<script src="js/demo/chart-bar-demo.js"></script>  -->
+
+<!-- Page level plugins --> 
+<script src="vendor/datatables/jquery.dataTables.min.js"></script> 
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script> 
+<script src="vendor/datatables/dataTables.responsive.min.js"></script> 
+<script src="vendor/datatables/responsive.bootstrap4.min.js"></script> 
+
+<!--  Select--> 
+<script src="vendor/select/bootstrap-select.min.js"></script> 
+
+<!-- Page level custom scripts --> 
+<script src="js/demo/datatables-demo.js"></script> 
+<script src="js/demo/date-range-picker-demo.js"></script> 
+
+
+        <script>
+            // Left Sidebar
+              (function($) {
+              "use strict";
+
+              // Add active state to sidbar nav links
+              var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+                  $("#layoutSidenav_nav .sb-sidenav a.nav-link").each(function() {
+                      if (this.href === path) {
+                          $(this).addClass("active");
+                      }
+                  });
+
+              // Toggle the side navigation
+              $("#sidebarToggle").on("click", function(e) {
+                  e.preventDefault();
+                  $("body").toggleClass("sb-sidenav-toggled");
+              });
+          })(jQuery);
+        </script>
+        <script>
+ //Datatable Search Filter
+    $(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#dataTable3 thead tr').clone(true).appendTo( '#dataTable3 thead' );
+    $('#dataTable3 thead tr:eq(1) th').each( function (i) {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+ 
+        $( 'input', this ).on( 'keyup change', function () {
+            if ( table.column(i).search() !== this.value ) {
+                table
+                    .column(i)
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+ 
+    var table = $('#dataTable3').DataTable( {
+        orderCellsTop: true,
+        fixedHeader: true
+    } );
+} );  
+</script>
+    
+<script>
+    //Select Convert ul li
+    $('.drop-select').selectpicker();
+</script> 
+    
+<script>
+//Tool Tip
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+    
+<script>
+//File Name Show
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+
+<script>
+//   Current Date Time
+$(function($) {
+  setInterval(function(){
+    // param sets timezone 
+    $('.user').timeUser();
+  }, 1000);
+});
+
+$.fn.extend ( {
+    timeTarget: function(offSet) {
+        var hiDate, 
+        		hiTime, 
+        		hiHours;
+        
+        tgtTime  = new Date();
+        tgtHours = tgtTime.getUTCHours() - offSet;
+        tgtTime.setHours(tgtHours);
+        tgtDate  = tgtTime.toDateString();
+        tgtTime = tgtTime.toTimeString();
+        this.html(tgtDate + ' ' + tgtTime.substring(0, 8));  
+      },
+  
+    timeUser: function() {
+        var userTime, 
+        userDate;
+        
+        userTime = new Date();
+        userDate = userTime.toDateString(); 
+        userTime = userTime.toTimeString();
+               
+       this.html(userDate + ' ' + userTime.substring(0, 8)); 
+    }        
+});  
+</script> 
+
+<script>
+
+  // Scroll to top button appear
+  $(document).on('scroll', function() {
+    var scrollDistance = $(this).scrollTop();
+    if (scrollDistance > 100) {
+      $('.scroll-to-top').fadeIn();
+    } else {
+      $('.scroll-to-top').fadeOut();
+    }
+  });
+
+  // Smooth scrolling using jQuery easing
+  $(document).on('click', 'a.scroll-to-top', function(e) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: ($($anchor.attr('href')).offset().top)
+    }, 1000, 'easeInOutExpo');
+    e.preventDefault();
+  });
+
+// End of use strict
+
+</script>
+
+    </body>
+</html>
