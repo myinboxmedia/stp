@@ -59,7 +59,7 @@
 </style>
 
 <body class="sb-nav-fixed" id="page-top">
-    <nav class="sb-topnav navbar navbar-expand bg-primary mb-4 mt-4 pl-3 pl-lg-0">
+    <nav class="sb-topnav navbar navbar-expand bg-primary mb-4 mt-4 pl-3">
         <a class="navbar-brand shadow-inset py-2 rounded border border-light mr-lg-3 text-center" href="index.html"><img src="img/mim-logo.svg" alt="MIM Logo"></a>
         <button class="btn btn-primary order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0 top-info">
@@ -71,7 +71,6 @@
             </a>
         </div>
 
-        <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -88,7 +87,7 @@
         </ul>
     </nav>
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+        <!-- <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion bg-primary shadow-inset border-light" id="sidenavAccordion">
                 <div class="sb-sidenav-menu my-4">
                     <div class="nav">
@@ -110,12 +109,8 @@
                         </a>
                     </div>
                 </div>
-                <!-- <div class="sb-sidenav-footer text-center">
-                    <div class="small">Logged in as:</div>
-                    Yusuf Admin
-                </div> -->
             </nav>
-        </div>
+        </div> -->
         <div id="layoutSidenav_content">
 
             <main>
@@ -139,94 +134,101 @@
                                     <h6 class="m-0 font-weight-bold"><i class="fas fa-chart-line"></i> Traffic During The Day</h6>
                                 </div>
                                 <div class="card-body py-2">
-                                    <div class="row">
+                                    <div class="card-deck">
 
-                                        <!-- Earnings (Monthly) Card Example -->
-                                        <div class="col-lg-3 mb-4">
-                                            <a href="#">
-                                                <div class="card bg-primary shadow-inset border-light h-100 py-2">
-                                                    <div class="card-body">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col mr-2">
-                                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Queued
-                                                                </div>
-                                                                <div class="h5 mb-0 font-weight-bold text-success">36,114 <span><i class="fas fa-arrow-up text-success"></i></span></div>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <div class="icon icon-shape shadow-soft rounded-circle">
-                                                                    <span class="fas fa-link fa-2x text-dark"></span>
-                                                                </div>
-                                                            </div>
+                                        <!-- Card Example -->
+
+                                        <div class="card bg-primary shadow-inset border-light h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Queued
+                                                        </div>
+                                                        <div class="h5 mb-0 font-weight-bold text-success">36,114 <span><i class="fas fa-arrow-up text-success"></i></span></div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape shadow-soft rounded-circle">
+                                                            <span class="fas fa-forward fa-2x text-dark"></span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
 
-                                        <!-- Earnings (Monthly) Card Example -->
-                                        <div class="col-lg-3  mb-4 ">
-                                            <a href="#">
-                                                <div class="card bg-primary shadow-inset border-light h-100 py-2">
-                                                    <div class="card-body">
+                                        <!--Card Example -->
+
+                                        <div class="card bg-primary shadow-inset border-light h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Submitted</div>
                                                         <div class="row no-gutters align-items-center">
-                                                            <div class="col mr-2">
-                                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Submitted</div>
-                                                                <div class="row no-gutters align-items-center">
-                                                                    <div class="col-auto">
-                                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-danger">82,554 <span><i class="fas fa-arrow-down text-danger"></i></span></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                             <div class="col-auto">
-                                                                <div class="icon icon-shape shadow-soft rounded-circle">
-                                                                    <span class="fas fa-mouse-pointer fa-2x text-dark"></span>
-                                                                </div>
+                                                                <div class="h5 mb-0 mr-3 font-weight-bold text-danger">82,554 <span><i class="fas fa-arrow-down text-danger"></i></span></div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape shadow-soft rounded-circle">
+                                                            <span class="fas fa-check-circle fa-2x text-dark"></span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
+
                                         <!-- Card Start -->
-                                        <div class="col-lg-3 mb-4 ">
-                                            <a href="#">
-                                                <div class="card bg-primary shadow-inset border-light h-100 py-2">
-                                                    <div class="card-body">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col mr-2">
-                                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Delivered</div>
-                                                                <div class="h5 mb-0 font-weight-bold text-success">56,67 <span><i class="fas fa-arrow-up text-success"></i></span></div>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <div class="icon icon-shape shadow-soft rounded-circle">
-                                                                    <span class="fas fa-check-double fa-2x text-dark"></span>
-                                                                </div>
-                                                            </div>
+                                        <div class="card bg-primary shadow-inset border-light h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Delivered</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-success">56,67 <span><i class="fas fa-arrow-up text-success"></i></span></div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape shadow-soft rounded-circle">
+                                                            <span class="fas fa-check-double fa-2x text-dark"></span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card End -->
+                                        <!-- Card Start -->
+
+                                        <div class="card bg-primary shadow-inset border-light h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Unknown</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-danger">56,67 <span><i class="fas fa-arrow-down text-danger"></i></span></div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape shadow-soft rounded-circle">
+                                                            <span class="fas fa-question-circle fa-2x text-dark"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- Card End -->
                                         <!-- Card Start -->
-                                        <div class="col-lg-3 mb-4 ">
-                                            <a href="#">
-                                                <div class="card bg-primary shadow-inset border-light h-100 py-2">
-                                                    <div class="card-body">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col mr-2">
-                                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Unknown</div>
-                                                                <div class="h5 mb-0 font-weight-bold text-danger">56,67 <span><i class="fas fa-arrow-down text-danger"></i></span></div>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <div class="icon icon-shape shadow-soft rounded-circle">
-                                                                    <span class="fas fa-question-circle fa-2x text-dark"></span>
-                                                                </div>
-                                                            </div>
+
+                                        <div class="card bg-primary shadow-inset border-light h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Failed</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-danger">767 <span><i class="fas fa-arrow-down text-danger"></i></span></div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape shadow-soft rounded-circle">
+                                                            <span class="fas fa-thumbs-down fa-2x text-dark"></span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
                                         <!-- Card End -->
                                     </div>
